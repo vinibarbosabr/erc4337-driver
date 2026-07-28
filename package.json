@@ -1,0 +1,60 @@
+{
+  "name": "erc4337-driver",
+  "version": "0.1.0",
+  "description": "Drive an existing ERC-4337 smart account with its admin key — browser (Rabby) or CLI. First adapter: thirdweb Account.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "erc-4337",
+    "account-abstraction",
+    "smart-account",
+    "thirdweb",
+    "viem",
+    "eip-1193",
+    "rabby",
+    "driver"
+  ],
+  "author": "Vini Barbosa <vinibarbosabr>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinibarbosabr/erc4337-driver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinibarbosabr/erc4337-driver/issues"
+  },
+  "homepage": "https://github.com/vinibarbosabr/erc4337-driver#readme",
+  "peerDependencies": {
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "viem": "^2.21.0",
+    "vitest": "^2.1.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false
+}
