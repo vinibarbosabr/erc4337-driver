@@ -16,12 +16,12 @@ Many apps (in-app wallets, thirdweb `clientId`-scoped accounts, etc.) create a s
 - Balances, protocol identity, and other arbitrary data (eg., Reputation Points) live on the **smart-account address**, not on the admin EOA.
 - Exporting the admin key into Rabby or other EVM wallets still does not let you “act as” that smart account from another context without the original factory / salt wiring.
 
-This design has security implications for the user's self-custody assumptions.
+### Self-custody implications
 
-- Users always depend on the app to access their accounts (funds, etc.)
-- If the app goes offline, the user may not be able to instinctively recover their account (and funds)
-- A similar dependency exists around `thirdweb` or other account abstraction providers
-- It's not true self-custody if the users can't easily access their accounts from the backed-up private key
+This design has non-obvious consequences for user self-custody assumptions.
+
+- Without the original app (or a tool that reconstructs the missing wiring), recovery is non-intuitive for most users.
+- Result: the common mental model “I backed up my private key → I have self-custody” breaks for these deployments. The key is sufficient on-chain, but the recovery path is not.
 
 **erc4337-driver** fills the gap:
 
