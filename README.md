@@ -6,6 +6,8 @@ First adapter: **thirdweb Account**.
 [![npm](https://img.shields.io/npm/v/erc4337-driver)](https://www.npmjs.com/package/erc4337-driver)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+**Background article:** [ERC-4337 smart accounts: When backing up your private key is not enough](https://thecoding.substack.com/p/erc-4337-smart-accounts-when-backing)
+
 ---
 
 ## Why this exists
@@ -25,7 +27,7 @@ This design has non-obvious consequences for user self-custody assumptions.
 
 **erc4337-driver** fills the gap:
 
-> Take an **already-deployed** ERC-4337 smart account, connect its **admin key** (browser via Rabby / any EIP-1193, or later CLI), and call `execute` / `executeBatch` **directly** on the account contract — no original dapp, no thirdweb `clientId`, no bundler required for the core path.
+> Drive an **already-deployed** ERC-4337 smart account, connect its **admin key** (browser via Rabby / any EIP-1193, or later CLI), and call `execute` / `executeBatch` **directly** on the account contract — no original dapp, no thirdweb `clientId`, no bundler required for the core path.
 
 Closest neighbours do different jobs (full wallet UIs, in-stack create+operate SDKs, social recovery). This library is intentionally narrow.
 
@@ -215,5 +217,11 @@ pnpm test          # includes a live Base read for the known research account
 ## License
 
 MIT © Vini Barbosa
+
+---
+
+## Further reading
+
+- [Full background article on thecoding](https://thecoding.substack.com/p/erc-4337-smart-accounts-when-backing)
 
 ---
